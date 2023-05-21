@@ -21,7 +21,7 @@
   padding: 20px;
   border: none;
   background: gray;
-
+  font-style: italic;
 }
 
 .sms_input input::placeholder {
