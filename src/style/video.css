@@ -1,0 +1,10 @@
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider video {
+  margin: 10px;
+  width: 90%;
+}

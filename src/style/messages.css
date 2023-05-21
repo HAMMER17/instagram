@@ -1,0 +1,84 @@
+.messages_container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.messages {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 10px;
+}
+
+.messages img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.message_sms p {
+  margin: 5px;
+  color: white;
+}
+
+.message_sms {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  color: white;
+}
+
+.message_plus {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
+  color: white;
+}
+
+.message_plus p {
+  padding: 5px;
+  margin: 5px;
+}
+
+.message_plus span {
+  width: 50%;
+  background: blue;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  border-radius: 10px 0 30px 10px;
+}
+
+.message_sms p {
+  padding: 5px;
+}
+
+.message_sms span {
+  width: 50%;
+  background: green;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 0 10px 10px 30px;
+  text-align: center;
+}
+
+.message_reserve {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* .message_sms span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35%;
+border-radius: 0 20px 20px 20px;
+color: white;
+background: blue;
+padding: 10px;
+margin: 10px;
+} */

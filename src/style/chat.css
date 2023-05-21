@@ -1,0 +1,14 @@
+.chat {
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  height: 100%;
+  color: white;
+}
+
+.chat img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 10px;
+}
