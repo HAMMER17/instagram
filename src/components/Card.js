@@ -59,17 +59,17 @@ const Card = ({ fileImg, title, user, avatar, getUser, toData, time, sendMessage
       </div>
       <div className="card_icon">
         <span>
-          <BsFillSuitHeartFill size={20} style={{ color: heart ? 'red' : 'white' }} onClick={changeHeart} />
+          <BsFillSuitHeartFill size={20} style={{ color: heart ? 'red' : 'white', cursor: 'pointer' }} onClick={changeHeart} />
         </span>
         <span>
-          <MdSms style={{ cursor: 'pointer' }} size={20} onClick={sendSms} />
+          <MdSms style={{ cursor: 'pointer' }} size={20} />
         </span>
         <span>
-          <IoArrowRedo size={20} />
+          <IoArrowRedo style={{ cursor: 'pointer' }} size={20} onClick={sendSms} />
         </span>
-
+        <p>{toData}</p>
       </div>
-      <p>{toData}</p>
+
     </div>
   )
 }

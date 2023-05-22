@@ -23,6 +23,7 @@ const Slack = () => {
     const docRef = await addDoc(collection(db, "messages"), {
       uid: userName.uid,
       user: userName.displayName,
+      photo: userName.photoURL,
       message: text,
       createAt: serverTimestamp(),
     });

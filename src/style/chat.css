@@ -11,4 +11,14 @@
   height: 60px;
   border-radius: 50%;
   margin: 10px;
+  cursor: pointer;
+}
+
+.chat h3 {
+  font-style: italic;
+
+}
+
+.chat li {
+  font-family: 'Poppins', sans-serif;
 }

@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux'
 const Messages = () => {
   const [item, setItem] = useState([])
   const [text, setText] = useState([])
-
+  console.log(text)
   const navigate = useNavigate()
   // const ref = useRef()
   const { userName } = useContext(AuthContext)
@@ -49,10 +49,10 @@ const Messages = () => {
     <>
       <div className="messages_container">
         <div className='messages'>
-          <BsFillBackspaceFill size={25} onClick={() => navigate('/')} style={{ color: 'white', margin: 10 }} />
+          <BsFillBackspaceFill size={25} onClick={() => navigate('/')} style={{ color: 'white', margin: 10, cursor: 'pointer' }} />
           <div className="messages_img">
 
-            <img src={item.photo} alt="user" />
+            <img src={item.photo} alt="user" onClick={() => navigate(`/${item.name}`)} />
             <p>{item.name}</p>
           </div>
         </div>
@@ -61,7 +61,9 @@ const Messages = () => {
 
           {text.flatMap(el => (
             <div key={el.id} className={el.user !== userName.displayName ? 'message_plus' : 'message_sms'}>
+              <img style={{ width: 60, height: 60, objectFit: 'cover', borderRadius: '50%' }} src={el.photo} alt="user" />
               <p>{el.user}</p>
+
               <span>{el.message}</span>
 
             </div>
