@@ -2,9 +2,10 @@
   height: 90px;
   background: black;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
-  /* margin: 1px; */
+  /* padding: 0 20px; */
+  /* margin: 5px; */
   color: white;
   /* border-radius: 10px; */
   /* overflow-y: hidden;
@@ -16,7 +17,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 1px solid rgb(255, 0, 225);
+  border: 1px solid red;
   margin: 5px;
 
 }
@@ -42,7 +43,7 @@
 
 .navbar_friends img {
   object-fit: cover;
-
+  border: 1px solid rgb(255, 0, 225);
 }
 
 .navbar_friends {

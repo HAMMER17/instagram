@@ -65,6 +65,7 @@ const AddData = () => {
               id: userName.uid,
               clock: clock,
             });
+            navigate('/')
           })
         }
       )

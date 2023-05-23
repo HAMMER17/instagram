@@ -1,0 +1,72 @@
+.sms_container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 30%;
+  transform: translateX(100%);
+  transition: 0.5s;
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+}
+
+.show {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(52, 52, 52);
+  color: white;
+  /* background: linear-gradient(45deg, black, red, black); */
+  transform: translateX(0);
+  transition: 0.5s;
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  /* z-index: 1; */
+}
+
+.sms_container input {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 70%;
+  height: 40px;
+  padding: 20px;
+  background: black;
+  color: white;
+  border: none;
+
+}
+
+.sms_container button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 40px;
+  width: 30%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: green;
+  color: white;
+  border: none;
+}
+
+.sms_container img {
+  height: 60%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.sms_container p {
+  margin: 5px;
+}
+
+.textUser {
+
+  padding: 10px;
+}

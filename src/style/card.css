@@ -109,3 +109,20 @@
   margin: 10px;
   border-bottom: 1px solid black;
 }
+
+/* .span {
+  position: relative;
+} */
+
+.span span {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

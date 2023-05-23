@@ -5,6 +5,7 @@ import { MdSms } from 'react-icons/md'
 import { AiOutlineBars } from 'react-icons/ai'
 import { IoArrowRedo } from 'react-icons/io5'
 import { useState } from 'react'
+import Sms from './Sms'
 
 // import moment from 'moment';
 // import { useNavigate } from 'react-router-dom'
@@ -13,6 +14,11 @@ import { useState } from 'react'
 
 const Card = ({ fileImg, title, user, avatar, getUser, toData, time, sendMessage }) => {
   const [heart, setHeart] = useState(false)
+  const [smsShow, setSmsShow] = useState(false)
+
+  const showSms = () => {
+    setSmsShow(smsShow ? null : 'show')
+  }
   const changeHeart = () => {
     setHeart(!heart)
   }
@@ -29,6 +35,7 @@ const Card = ({ fileImg, title, user, avatar, getUser, toData, time, sendMessage
   }
   return (
     <div className='card'>
+      <Sms fileImg={fileImg} onShow={() => showSms(!smsShow)} show={smsShow} />
       <div className="card_img">
         <div className="card_item">
           <img style={{ width: 60, height: 60, borderRadius: 50, objectFit: 'cover', cursor: 'pointer' }} onClick={onUser}
@@ -59,13 +66,14 @@ const Card = ({ fileImg, title, user, avatar, getUser, toData, time, sendMessage
       </div>
       <div className="card_icon">
         <span>
-          <BsFillSuitHeartFill size={20} style={{ color: heart ? 'red' : 'white', cursor: 'pointer' }} onClick={changeHeart} />
+          <BsFillSuitHeartFill size={25} style={{ color: heart ? 'red' : 'white', cursor: 'pointer' }} onClick={changeHeart} />
+        </span>
+        <span className='span'>
+          {/* <span>1</span> */}
+          <MdSms style={{ cursor: 'pointer' }} size={25} onClick={showSms} />
         </span>
         <span>
-          <MdSms style={{ cursor: 'pointer' }} size={20} />
-        </span>
-        <span>
-          <IoArrowRedo style={{ cursor: 'pointer' }} size={20} onClick={sendSms} />
+          <IoArrowRedo style={{ cursor: 'pointer' }} size={25} onClick={sendSms} />
         </span>
         <p>{toData}</p>
       </div>
