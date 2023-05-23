@@ -30,7 +30,8 @@ const Login = () => {
   return (
     <div className='register'>
       <form className="register_container" onSubmit={getUser}>
-        <img src="/images/t.jpg" alt="tiger" />
+        <div className="register_img" style={{ height: 250, width: 270 }}></div>
+        {/* <img src="/images/t.jpg" alt="tiger" /> */}
         <h2>Login</h2>
         <input type="text" placeholder='Email...' onChange={(e) => setEmail(e.target.value)} value={email} />
         <input type="text" placeholder='Password...' onChange={(e) => setPassword(e.target.value)} value={password} />

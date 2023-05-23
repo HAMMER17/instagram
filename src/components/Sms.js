@@ -24,11 +24,12 @@ const Sms = ({ fileImg, show, onShow }) => {
 
       <BsFillBackspaceReverseFill style={{ margin: 10 }} size={25} onClick={() => onShow(!show)} />
       <img src={fileImg} alt="s" />
-
+      <span style={{ color: 'white', margin: 5 }}>Comment...</span>
       {value.map(text => (
         <div key={Math.random()} className="textUser" style={{ display: 'flex', margin: 5 }}>
           <img style={{ width: 50, height: 50, borderRadius: 50 }} src={userName.photoURL} alt="ava" />
           <div style={{ display: 'flex', flexDirection: 'column', marginLeft: 10 }}>
+
             <h5 style={{ fontStyle: 'italic' }}>{userName.displayName}  </h5>
             <p >{text}</p>
             <span style={{ fontSize: 10 }}>{date}</span>

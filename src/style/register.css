@@ -41,6 +41,41 @@
   transition: 0.5s;
 }
 
+.register_img {
+
+  border-radius: 10px;
+  margin: 10px;
+  /* background-image: url('/public/images/g1.jpg'); */
+  /* background: no-repeat; */
+  animation: anime 10s infinite ease-in-out;
+
+}
+
+
+@keyframes anime {
+  0% {
+    background-image: url('/public/images/g2.jpg');
+  }
+
+  25% {
+    background-image: url('/public/images/g3.jpg');
+    /* object-fit: cover; */
+  }
+
+  50% {
+    background-image: url('/public/images/g4.jpg');
+    /* object-fit: cover; */
+  }
+
+  75% {
+    background-image: url('/public/images/g5.png');
+  }
+
+  100% {
+    background-image: url('/public/images/g1.jpg');
+  }
+}
+
 .register img {
   width: 250px;
   border-radius: 10px;

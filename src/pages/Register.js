@@ -67,7 +67,8 @@ const Register = () => {
     <div className='register'>
 
       <form className="register_container" onSubmit={createUser}>
-        <img src="/images/t.jpg" alt="tiger" />
+        <div className="register_img" style={{ height: 250, width: 270 }}></div>
+        {/* <img src="/images/t.jpg" alt="tiger" /> */}
         <h2>Instagram</h2>
         <input type="text" placeholder='FirstName' onChange={(e) => setUserName(e.target.value)} value={username} />
         <input type="text" placeholder='Email' onChange={(e) => setEmail(e.target.value)} value={email} />
