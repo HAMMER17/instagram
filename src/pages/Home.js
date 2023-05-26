@@ -40,8 +40,10 @@ const Home = () => {
     dispatch(getUser(user))
     navigate(`/chat/${user}`)
   }
+
   return (
     <>
+
       <Header />
       <Navbar />
 
@@ -49,9 +51,12 @@ const Home = () => {
         <Card fileImg={elem.img} user={elem.userId} key={elem.timestamp}
           title={elem.text} avatar={elem.date} getUser={() => getUserData(elem.userId)}
           toData={elem.timestamp} time={elem.clock} sendMessage={() => userChat(elem.userId)}
+
         />
       ))}
+
       <Footer />
+
     </>
   )
 }

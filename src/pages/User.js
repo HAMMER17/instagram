@@ -31,13 +31,13 @@ const User = () => {
 
       arr.push(doc.data());
     });
-    setDataImg(arr.concat(arr))
+    setDataImg(arr)
   }
   useEffect(() => {
     getUser()
     getDataImg()
     // eslint-disable-next-line 
-  }, [state])
+  }, [])
   return (
     < >
       {item.map(elem => (

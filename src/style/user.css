@@ -37,6 +37,7 @@ h4 {
   color: white;
   padding: 10px;
   margin: 20px;
+  cursor: pointer;
 }
 
 .user_photo {

@@ -24,6 +24,7 @@ function App() {
   return (
 
     <BrowserRouter>
+
       <Routes>
         <Route index path="/" element={<UserRoute><Home /></UserRoute>} />
         <Route path='/login' element={<Login />} />
@@ -33,6 +34,7 @@ function App() {
         <Route path="/chat/:id" element={<Messages />} />
         <Route path="/search" element={<Search />} />
       </Routes>
+
     </BrowserRouter >
 
   );

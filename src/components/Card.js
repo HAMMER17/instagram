@@ -1,20 +1,35 @@
 import '../style/card.css'
-
+import { getFirestore, collection, onSnapshot, query, where } from "firebase/firestore";
+import { app } from '../firebase/fifebase';
 import { BsFillSuitHeartFill } from 'react-icons/bs'
 import { MdSms } from 'react-icons/md'
 import { AiOutlineBars } from 'react-icons/ai'
 import { IoArrowRedo } from 'react-icons/io5'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Sms from './Sms'
 
-// import moment from 'moment';
-// import { useNavigate } from 'react-router-dom'
-// import { AuthContext } from '../context/AuthContext'
 
+const db = getFirestore(app)
 
 const Card = ({ fileImg, title, user, avatar, getUser, toData, time, sendMessage }) => {
+  const [value, setValue] = useState([])
   const [heart, setHeart] = useState(false)
   const [smsShow, setSmsShow] = useState(false)
+
+  useEffect(() => {
+    const q = query(collection(db, "userChat"), where("test", "==", fileImg));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const chats = [];
+      querySnapshot.forEach((doc) => {
+        chats.push(doc.data());
+      });
+      setValue(chats)
+      console.log("Chats: ", chats);
+
+    });
+    return () => unsubscribe()
+    // eslint-disable-next-line
+  }, [])
 
   const showSms = () => {
     setSmsShow(smsShow ? null : 'show')
@@ -34,8 +49,9 @@ const Card = ({ fileImg, title, user, avatar, getUser, toData, time, sendMessage
     setModal(modal ? null : 'plus')
   }
   return (
+
     <div className='card'>
-      <Sms fileImg={fileImg} onShow={() => showSms(!smsShow)} show={smsShow} />
+      <Sms fileImg={fileImg} onShow={() => showSms(!smsShow)} show={smsShow} value={value} test={fileImg} />
       <div className="card_img">
         <div className="card_item">
           <img style={{ width: 60, height: 60, borderRadius: 50, objectFit: 'cover', cursor: 'pointer' }} onClick={onUser}
@@ -69,7 +85,7 @@ const Card = ({ fileImg, title, user, avatar, getUser, toData, time, sendMessage
           <BsFillSuitHeartFill size={25} style={{ color: heart ? 'red' : 'white', cursor: 'pointer' }} onClick={changeHeart} />
         </span>
         <span className='span'>
-          {/* <span>1</span> */}
+          <span>{value.length}</span>
           <MdSms style={{ cursor: 'pointer' }} size={25} onClick={showSms} />
         </span>
         <span>
@@ -77,8 +93,8 @@ const Card = ({ fileImg, title, user, avatar, getUser, toData, time, sendMessage
         </span>
         <p>{toData}</p>
       </div>
-
     </div>
+
   )
 }
 
