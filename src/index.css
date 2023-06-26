@@ -13,7 +13,7 @@ a {
 
 body {
   background: black;
-
+  /* background: var(--bg); */
 }
 
 .btn {
@@ -25,9 +25,30 @@ body {
   margin: 10px;
 }
 
-/* .home {
-  height: 100%;
-} */
+/* [data-theme='dark'] */
+.dark {
+  --bg: black;
+  --color: white;
+  /* --bg-color: orange; */
+
+}
+
+/* [data-theme='light']  */
+.light {
+  --bg: rgb(162, 160, 160);
+  --color: black;
+  /* --bg-color: blue; */
+}
+
+.button_theme {
+  position: absolute;
+  top: 2%;
+  left: 1%;
+  width: 150px;
+  height: 30px;
+  background: none;
+  border: none;
+}
 
 /* font-family: 'Inter', sans-serif;
 font-family: 'Oswald', sans-serif;

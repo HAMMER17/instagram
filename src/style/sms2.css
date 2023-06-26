@@ -32,7 +32,7 @@
 
   display: flex;
   padding: 5px;
-
+  margin-top: auto;
 }
 
 .sms_container input {

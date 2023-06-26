@@ -29,7 +29,7 @@ const Login = () => {
   }
   return (
     <div className='register'>
-      <form className="register_container" onSubmit={getUser}>
+      <form className="register_container" onSubmit={getUser} >
         <div className="register_img" style={{ height: 250, width: 270 }}></div>
         {/* <img src="/images/t.jpg" alt="tiger" /> */}
         <h2>Login</h2>

@@ -10,6 +10,9 @@ import { AuthContext } from "./context/AuthContext";
 import User from "./pages/User";
 import Search from "./pages/Search";
 import Messages from "./pages/Messages";
+import Profile from "./pages/Profile";
+
+
 
 function App() {
   const { userName } = useContext(AuthContext)
@@ -20,7 +23,6 @@ function App() {
     }
     return children;
   }
-
   return (
 
     <BrowserRouter>
@@ -33,6 +35,7 @@ function App() {
         <Route path="/:id" element={<User />} />
         <Route path="/chat/:id" element={<Messages />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/profile/:id" element={<Profile />} />
       </Routes>
 
     </BrowserRouter >

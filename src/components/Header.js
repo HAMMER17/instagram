@@ -12,6 +12,7 @@ const Header = () => {
   const navigate = useNavigate()
 
   const [username, setName] = useState('')
+
   onAuthStateChanged(auth, (user) => {
     setName(user)
   })
@@ -24,14 +25,15 @@ const Header = () => {
       console.log(error)
     });
   }
+
   return (
     <div className='header'>
 
-      <h2>Instagram</h2>
+      <h2 style={{ cursor: 'pointer' }}>Instagram</h2>
       <div className="header_item">
         <>
           {username ? <>
-            <AiOutlineLogout style={{ cursor: 'pointer' }} size={30} onClick={outUser} /></> : <>
+            <AiOutlineLogout style={{ cursor: 'pointer', color: 'red' }} size={30} onClick={outUser} /></> : <>
             <button style={{ background: 'green' }}><Link to={'/register'}>Sugn Up</Link></button>
             <button style={{ background: 'blue' }}><Link to={'/login'}>Sugn In</Link></button>
           </>}

@@ -15,7 +15,7 @@ const Sms = ({ fileImg, show, onShow, value = [], test }) => {
 
   const textSubmit = async (e) => {
     e.preventDefault()
-    const docRef = await addDoc(collection(db, "userChat"), {
+    const docRef = await addDoc(collection(db, "userComment"), {
       test,
       url: userName.photoURL,
       name: userName.displayName,
@@ -23,7 +23,6 @@ const Sms = ({ fileImg, show, onShow, value = [], test }) => {
       time: date,
     });
     console.log("Document written with ID: ", docRef.id);
-    // setValue([...value, text])
     setText('')
   }
 

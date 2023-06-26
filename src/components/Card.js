@@ -8,23 +8,22 @@ import { IoArrowRedo } from 'react-icons/io5'
 import { useState, useEffect } from 'react'
 import Sms from './Sms'
 
-
 const db = getFirestore(app)
-
 const Card = ({ fileImg, title, user, avatar, getUser, toData, time, sendMessage }) => {
+
   const [value, setValue] = useState([])
   const [heart, setHeart] = useState(false)
   const [smsShow, setSmsShow] = useState(false)
 
   useEffect(() => {
-    const q = query(collection(db, "userChat"), where("test", "==", fileImg));
+    const q = query(collection(db, "userComment"), where("test", "==", fileImg));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       const chats = [];
       querySnapshot.forEach((doc) => {
         chats.push(doc.data());
+
       });
       setValue(chats)
-      console.log("Chats: ", chats);
 
     });
     return () => unsubscribe()
@@ -43,7 +42,7 @@ const Card = ({ fileImg, title, user, avatar, getUser, toData, time, sendMessage
   const sendSms = (sms) => {
     sendMessage(sms)
   }
-  // const navigate = useNavigate()
+
   const [modal, setModal] = useState('plus')
   const showModal = () => {
     setModal(modal ? null : 'plus')

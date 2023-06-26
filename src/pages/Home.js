@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import { app } from '../firebase/fifebase';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
@@ -10,10 +10,13 @@ import { useNavigate } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
 import { getUser } from '../story/UserStory'
+import { AuthContext } from '../context/AuthContext';
+
 
 const Home = () => {
-
+  const { userName } = useContext(AuthContext)
   const [data, setData] = useState([])
+
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
@@ -40,7 +43,10 @@ const Home = () => {
     dispatch(getUser(user))
     navigate(`/chat/${user}`)
   }
-
+  const userProfile = (id) => {
+    dispatch(getUser(id))
+    navigate(`/profile/${id}`)
+  }
   return (
     <>
 
@@ -55,7 +61,7 @@ const Home = () => {
         />
       ))}
 
-      <Footer />
+      <Footer Chat={() => userChat(userName.displayName)} User={() => userProfile(userName.displayName)} />
 
     </>
   )

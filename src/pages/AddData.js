@@ -11,7 +11,6 @@ import moment from 'moment';
 
 const AddData = () => {
 
-
   const times = moment().format('MMMM Do YYYY, h:mm:ss a');
   const clock = moment().format('LL');
   // console.log(clock)

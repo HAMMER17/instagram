@@ -9,6 +9,8 @@
   margin: 5px;
   transition: 0.5s;
   overflow-x: hidden;
+  /* background: var(--bg);
+  color: var(--color); */
   color: white;
   /* border: 1px solid black; */
   /* background: black; */
@@ -56,7 +58,7 @@
 .card_icon {
   display: flex;
   align-items: center;
-
+  /* color: var(--color); */
 }
 
 .card_icon p {
